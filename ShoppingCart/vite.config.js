@@ -3,8 +3,17 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base:'/ReactTasks/',
+  base: '/React_Tasks/',
   plugins: [react()],
-  build: { outDir: 'dist' }, resolve: { alias: { '@': '/src' } }
-  
-  })
+  build: { 
+    outDir: 'dist',
+    rollupOptions: {
+      external: ['@mui/material']
+    }
+  },
+  resolve: { 
+    alias: { 
+      '@': '/src' 
+    } 
+  }
+})
